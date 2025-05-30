@@ -2,13 +2,14 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import React from 'react'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
+  const pathname = usePathname()
+
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap p-4">
-        {/* Combined logo and nav links in one flex container */}
         <div className="flex items-center gap-0">
           {/* Logo */}
           <Image
@@ -30,7 +31,14 @@ const Navbar = () => {
               <Link
                 key={label}
                 href={href}
-                className="border border-white text-white rounded-4xl px-10 py-3 transition duration-300 hover:bg-white hover:text-black"
+                className={`
+                  border border-white 
+                  rounded-full 
+                  px-10 py-3 
+                  transition duration-300 
+                  hover:bg-white hover:text-black
+                  ${pathname === href ? 'bg-white !text-black' : 'text-white'}
+                `}
               >
                 {label}
               </Link>

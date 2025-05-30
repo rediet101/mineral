@@ -3,6 +3,7 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function ServicesPage() {
   return (
@@ -75,7 +76,11 @@ export default function ServicesPage() {
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-black rounded-full">
-                  <Image src="/icons/map.svg" alt="Mapping" width={24} height={24} className="invert" />
+                <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="40" rx="16" fill="black"/>
+<path d="M23.7812 25.8438C24.0625 26.1562 24.0625 26.625 23.75 26.9062L22.875 27.7812C22.5938 28.0938 22.125 28.0938 21.8125 27.7812L18.7188 24.6875C18.5625 24.5312 18.5 24.3438 18.5 24.1562V23.625C17.375 24.5 16 25 14.5 25C10.9062 25 8 22.0938 8 18.5C8 14.9375 10.9062 12 14.5 12C18.0625 12 21 14.9375 21 18.5C21 20.0312 20.4688 21.4062 19.625 22.5H20.125C20.3125 22.5 20.5 22.5938 20.6562 22.7188L23.7812 25.8438ZM14.5 22.5C16.6875 22.5 18.5 20.7188 18.5 18.5C18.5 16.3125 16.6875 14.5 14.5 14.5C12.2812 14.5 10.5 16.3125 10.5 18.5C10.5 20.7188 12.2812 22.5 14.5 22.5Z" fill="white"/>
+</svg>
+
                 </div>
                 <div>
                   <h4 className="font-bold mb-2">Geological Mapping & Surveying</h4>
@@ -88,7 +93,11 @@ export default function ServicesPage() {
 
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-black rounded-full">
-                  <Image src="/icons/analysis.svg" alt="Analysis" width={24} height={24} className="invert" />
+                <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="40" rx="16" fill="black"/>
+<path d="M23.5 24C23.75 24 24 24.25 24 24.5V25.5C24 25.7812 23.75 26 23.5 26H9C8.4375 26 8 25.5625 8 25V14.5C8 14.25 8.21875 14 8.5 14H9.5C9.75 14 10 14.25 10 14.5V24H23.5ZM22.5 15C22.75 15 23 15.25 22.9688 15.5V19.2188C22.9688 19.875 22.1875 20.2188 21.7188 19.75L20.6875 18.7188L17.6875 21.7188C17.3125 22.125 16.6562 22.125 16.2812 21.7188L14 19.4375L12.5312 20.875C12.3438 21.0625 12.0312 21.0625 11.8438 20.875L11.125 20.1562C10.9375 19.9688 10.9375 19.6562 11.125 19.4688L13.2812 17.3125C13.6562 16.9062 14.3125 16.9062 14.6875 17.3125L17 19.5938L19.2812 17.3125L18.25 16.2812C17.7812 15.8125 18.125 15 18.7812 15H22.5Z" fill="white"/>
+</svg>
+
                 </div>
                 <div>
                   <h4 className="font-bold mb-2">Geophysical & Geochemical Analysis</h4>
@@ -101,7 +110,11 @@ export default function ServicesPage() {
 
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-black rounded-full">
-                  <Image src="/icons/report.svg" alt="Report" width={24} height={24} className="invert" />
+                <svg width="28" height="40" viewBox="0 0 28 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="28" height="40" rx="14" fill="#010101"/>
+<path d="M15 16.25C15 16.6875 15.3125 17 15.75 17H20V27.25C20 27.6875 19.6562 28 19.25 28H8.75C8.3125 28 8 27.6875 8 27.25V12.75C8 12.3438 8.3125 12 8.75 12H15V16.25ZM10 14.25V14.75C10 14.9062 10.0938 15 10.25 15H12.75C12.875 15 13 14.9062 13 14.75V14.25C13 14.125 12.875 14 12.75 14H10.25C10.0938 14 10 14.125 10 14.25ZM10 16.25V16.75C10 16.9062 10.0938 17 10.25 17H12.75C12.875 17 13 16.9062 13 16.75V16.25C13 16.125 12.875 16 12.75 16H10.25C10.0938 16 10 16.125 10 16.25ZM16 24C15.875 24 15.75 23.9375 15.6875 23.8125C15.3125 23.0625 14.25 22.875 13.625 23.375L13.1875 22.0625C13.0938 21.75 12.8125 21.5625 12.5 21.5625C12.1562 21.5625 11.875 21.75 11.7812 22.0625L11.2188 23.7812C11.1562 23.9062 11.0312 24 10.875 24H10.5C10.2188 24 10 24.25 10 24.5C10 24.7812 10.2188 25 10.5 25H10.875C11.4688 25 11.9688 24.6562 12.1562 24.0938L12.5 23.0938L13 24.6875C13.0625 24.875 13.25 25 13.4375 25C13.4688 25 13.4688 25 13.5 25C13.5 25 13.4688 25.0312 13.5 25.0312C13.6875 25.0312 13.8438 24.9062 13.9375 24.75L14.1562 24.25C14.25 24.0938 14.4062 24.0625 14.5 24.0625C14.5625 24.0625 14.7188 24.0938 14.8125 24.2812C15.0312 24.7188 15.5 25 16 25H17.5C17.75 25 18 24.7812 18 24.5C18 24.25 17.75 24 17.5 24H16ZM19.7812 15.2812C19.9062 15.4375 20 15.625 20 15.8125V16H16V12H16.1875C16.375 12 16.5625 12.0938 16.7188 12.2188L19.7812 15.2812Z" fill="white"/>
+</svg>
+
                 </div>
                 <div>
                   <h4 className="font-bold mb-2">Resource Estimation & Reporting</h4>
@@ -114,7 +127,11 @@ export default function ServicesPage() {
 
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-black rounded-full">
-                  <Image src="/icons/environment.svg" alt="Environment" width={24} height={24} className="invert" />
+                <svg width="32" height="40" viewBox="0 0 32 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="40" rx="16" fill="black"/>
+<path d="M10 15C13.8438 15 17 18.1562 17 22V26.5C17 26.7812 16.75 27 16.5 27H15.5C15.2188 27 15 26.7812 15 26.5V22C11.125 22 8 18.875 8 15H10ZM22 13H24C24 16.625 21.25 19.625 17.7188 19.9688C17.375 18.7188 16.75 17.5625 15.875 16.625C17.0625 14.4688 19.3438 13 22 13Z" fill="white"/>
+</svg>
+
                 </div>
                 <div>
                   <h4 className="font-bold mb-2">Environmental Impact Assessment</h4>
@@ -124,10 +141,11 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-
+<Link href="/contact">
             <button className="mt-8 bg-black text-white px-6 py-3 rounded-full">
               Request Testing Services
             </button>
+            </Link>
           </div>
 
           <div className="relative h-[600px] rounded-3xl overflow-hidden">

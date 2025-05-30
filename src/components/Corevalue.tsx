@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function Corevalue() {
      const [activeIndex, setActiveIndex] = useState(0);
-
+     const [activeService, setActiveService] = useState('Minerals Exploration & Development');
   return (
     <main className="min-h-screen text-gray-800 bg-white">
       {/* Header Section */}
@@ -52,19 +52,54 @@ export default function Corevalue() {
           </h2>
 
           <div className="flex items-center gap-4 mb-16">
-            <Button variant="outline" className="rounded-full bg-black text-white px-8 py-6 text-lg hover:bg-black/90">
-              Minerals Exploration & Development
-            </Button>
-            <Button variant="outline" className="rounded-full border-2 border-black bg-white text-black px-8 py-6 text-lg hover:bg-gray-100">
-              Mining Laboratory Services
-            </Button>
-            <Button variant="outline" className="rounded-full border-2 border-black bg-white text-black px-8 py-6 text-lg hover:bg-gray-100">
-              Gemstone Production & Retail
-            </Button>
-            <Button variant="outline" className="rounded-full border-2 border-black bg-white text-black px-8 py-6 text-lg hover:bg-gray-100 ml-auto">
-              See All
-            </Button>
-          </div>
+  <Button 
+    variant="outline" 
+    className={`rounded-full px-8 py-6 text-lg ${
+      activeService === 'Minerals Exploration & Development' 
+        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+    }`}
+    onClick={() => setActiveService('Minerals Exploration & Development')}
+  >
+    Minerals Exploration & Development
+  </Button>
+  
+  <Button 
+    variant="outline" 
+    className={`rounded-full px-8 py-6 text-lg ${
+      activeService === 'Mining Laboratory Services' 
+        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+    }`}
+    onClick={() => setActiveService('Mining Laboratory Services')}
+  >
+    Mining Laboratory Services
+  </Button>
+  
+  <Button 
+    variant="outline" 
+    className={`rounded-full px-8 py-6 text-lg ${
+      activeService === 'Gemstone Production & Retail' 
+        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+    }`}
+    onClick={() => setActiveService('Gemstone Production & Retail')}
+  >
+    Gemstone Production & Retail
+  </Button>
+  
+  <Button 
+    variant="outline" 
+    className={`rounded-full px-8 py-6 text-lg ml-auto ${
+      activeService === 'See All' 
+        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+    }`}
+    onClick={() => setActiveService('See All')}
+  >
+    See All
+  </Button>
+</div>
 
           {/* Cards Section */}
           <div className="grid grid-cols-3 gap-6">
@@ -162,94 +197,115 @@ export default function Corevalue() {
       </section>
 
       {/* Featured Minerals Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-16 px-6">
         <div className="container mx-auto">
           <div className="flex items-start justify-between mb-12">
-            <h2 className="text-8xl font-bold text-black">FEATURED MINERALS</h2>
-            <p className="text-lg text-gray-600 text-left">
-              Discover our diverse range of <br/> 
-              high-quality minerals <br/> 
-              extracted and processed with <br/> 
-              sustainable practices and <br/> 
+            <h2 className="text-8xl font-bold">Featured Minerals</h2>
+            <p className="text-lg">
+              Discover our diverse range of<br />
+              high-quality minerals<br />
+              extracted and processed with<br />
+              sustainable practices and<br />
               cutting-edge technology.
             </p>
           </div>
 
-          <div className="container mx-auto">
-            <div className="relative group">
-              <div className="grid grid-cols-3 gap-8">
-                {/* Gold Card */}
-                <div 
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
-                  onMouseEnter={() => setActiveIndex(0)}
-                >
-                  <div className="h-48 bg-gradient-to-br from-yellow-100 to-yellow-300 flex items-center justify-center">
-                    <img 
-                      src="/goldbar.svg" 
-                      alt="Gold mineral" 
-                      className="w-32 h-32 object-contain transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3">Gold</h3>
-                    <p className="text-gray-600">
-                      High-purity gold extracted using sustainable methods from our Ethiopian mines.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Kaolin Card */}
-                <div 
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
-                  onMouseEnter={() => setActiveIndex(1)}
-                >
-                  <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                    <img 
-                      src="/salt.svg" 
-                      alt="Kaolin mineral" 
-                      className="w-32 h-32 object-contain transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3">Kaolin</h3>
-                    <p className="text-gray-600">
-                      Premium white kaolin clay with excellent purity and consistency.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Dolomite Card */}
-                <div 
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
-                  onMouseEnter={() => setActiveIndex(2)}
-                >
-                  <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                    <img 
-                      src="/dol.svg" 
-                      alt="Dolomite mineral" 
-                      className="w-32 h-32 object-contain transition-transform duration-300 hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3">Dolomite</h3>
-                    <p className="text-gray-600">
-                      Pure dolomite with excellent chemical properties for various industries.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Dot Indicators */}
-              <div className="flex justify-center mt-8 space-x-3">
-                {[0, 1, 2].map((index) => (
-                  <button
-                    key={index}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${activeIndex === index ? 'bg-black w-6' : 'bg-gray-300'}`}
-                    onClick={() => setActiveIndex(index)}
-                    aria-label={`View mineral ${index + 1}`}
+          <div className="relative">
+            <div className="grid grid-cols-3 gap-8">
+              {/* Gold Card */}
+              <div 
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105"
+                onMouseEnter={() => setActiveIndex(0)}
+              >
+                <div className="relative w-full h-[300px]">
+                  <img 
+                    src="/goldbar.svg" 
+                    alt="Gold mineral" 
+                    className="w-full h-full object-cover"
                   />
-                ))}
+                </div>
+                <div className="bg-white text-black p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-4xl font-bold">Gold</h3>
+                    <button className="bg-black rounded-full p-4 transition-transform hover:scale-110">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m-7-7l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="text-gray-500/90">
+                    High-purity gold extracted using sustainable methods from our Ethiopian mines.
+                  </p>
+                </div>
               </div>
+
+              {/* Kaolin Card */}
+              <div 
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105"
+                onMouseEnter={() => setActiveIndex(1)}
+              >
+                <div className="relative w-full h-[300px]">
+                  <img 
+                    src="/salt.svg" 
+                    alt="Kaolin mineral" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-white text-black p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-4xl font-bold">Kaolin</h3>
+                    <button className="bg-black rounded-full p-4 transition-transform hover:scale-110">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m-7-7l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="text-gray-500/90">
+                    Premium white kaolin clay with excellent purity and consistency.
+                  </p>
+                </div>
+              </div>
+
+              {/* Dolomite Card */}
+              <div 
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105"
+                onMouseEnter={() => setActiveIndex(2)}
+              >
+                <div className="relative w-full h-[300px]">
+                  <img 
+                    src="/dol.svg" 
+                    alt="Dolomite mineral" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-white text-black p-8">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-4xl font-bold">Dolomite</h3>
+                    <button className="bg-black rounded-full p-4 transition-transform hover:scale-110">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14m-7-7l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="text-gray-500/90">
+                    Pure dolomite with excellent chemical properties for various industries.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {[0, 1, 2].map((index) => (
+                <button
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    activeIndex === index ? 'bg-black w-8' : 'bg-gray-300'
+                  }`}
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`View mineral ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
