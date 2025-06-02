@@ -164,7 +164,7 @@ const Page = () => {
         })
       
         if(response) {
-            alert("Message sent successfully!");
+            alert("Form sent successfully!");
             reset();
             setAnalyticalMethods([]);
         }
@@ -211,7 +211,7 @@ const Page = () => {
 
   return (
     <div>
-      <section className="relative w-full h-[700px] overflow-hidden">
+      <section className="relative w-full h-[400px] sm:h-[700px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -228,9 +228,9 @@ const Page = () => {
         <div className="relative z-20 pt-3">
           <Navbar />
 
-          <div className="container mx-auto px-8 pt-20">
-            <h1 className="text-white text-[20vh] font-bold">Form</h1>
-            <p className="text-white/90 text-xl max-w-2xl">
+          <div className="container mx-auto px-4 sm:px-8 pt-10 sm:pt-20">
+            <h1 className="text-white text-7xl sm:text-[30vh] font-bold">Form</h1>
+            <p className="text-white/90 text-base sm:text-xl max-w-2xl">
               Reach out to our team for inquiries, support, or to discuss how we
               can meet your mineral exploration and processing needs.
             </p>
@@ -240,19 +240,19 @@ const Page = () => {
 
       {/* Background Image */}
 
-      <div className="min-h-screen p-6 bg-white">
+      <div className="min-h-screen p-4 sm:p-6 bg-white">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="max-w-4xl mx-auto bg-white p-8 rounded-lg"
+          className="w-full max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg"
         >
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold mb-2">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-xl sm:text-2xl font-bold mb-2">
               Customers Registration & Sample Hand Over Format
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm sm:text-base">
               Ethiopian Mineral Corporation - Laboratory Service Center
             </p>
-            <p className="text-gray-500">Form 004</p>
+            <p className="text-gray-500 text-sm sm:text-base">Form 004</p>
           </div>
 
           <div className="space-y-4">
@@ -400,7 +400,7 @@ const Page = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="form-group">
                 <label>Date Submitted:</label>
                 <input
@@ -440,54 +440,56 @@ const Page = () => {
 
             <div className="mt-8 overflow-x-auto">
               <h3 className="text-lg font-bold mb-4">Analytical Methods</h3>
-              <table className="min-w-full table-fixed border-collapse border border-black text-sm text-center">
-                <thead>
-                  <tr>
-                    <th className="border border-black bg-gray-100 px-4 py-2">
-                      Analytical Methods
-                    </th>
-                    {analyticalMethods.map((method) => (
-                      <th
-                        key={method.id}
-                        className="border border-black bg-gray-100 px-4 py-2"
-                      >
-                        {method.method_name}
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="min-w-full table-fixed border-collapse border border-black text-xs sm:text-sm text-center">
+                  <thead>
+                    <tr>
+                      <th className="border border-black bg-gray-100 px-4 py-2">
+                        Analytical Methods
                       </th>
-                    ))}
-                    <th className="border border-black bg-gray-100 px-4 py-2">
-                      Remark
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="border border-black font-semibold bg-white text-b px-4 py-2">
-                      Code
-                    </td>
-                    {analyticalMethods.map((method, index) => (
-                      <td
-                        key={method.id}
-                        className="border border-black px-2 py-1"
-                      >
+                      {analyticalMethods.map((method) => (
+                        <th
+                          key={method.id}
+                          className="border border-black bg-gray-100 px-4 py-2"
+                        >
+                          {method.method_name}
+                        </th>
+                      ))}
+                      <th className="border border-black bg-gray-100 px-4 py-2">
+                        Remark
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-black font-semibold bg-white text-b px-4 py-2">
+                        Code
+                      </td>
+                      {analyticalMethods.map((method, index) => (
+                        <td
+                          key={method.id}
+                          className="border border-black px-2 py-1"
+                        >
+                          <input
+                            {...register(
+                              `analytical_methods.${index}.code` as any
+                            )}
+                            className="w-full border border-black px-2 py-1 text-center"
+                            placeholder="Code"
+                          />
+                        </td>
+                      ))}
+                      <td className="border border-black px-2 py-1">
                         <input
-                          {...register(
-                            `analytical_methods.${index}.code` as any
-                          )}
+                          type="text"
                           className="w-full border border-black px-2 py-1 text-center"
-                          placeholder="Code"
+                          placeholder="Remark"
                         />
                       </td>
-                    ))}
-                    <td className="border border-black px-2 py-1">
-                      <input
-                        type="text"
-                        className="w-full border border-black px-2 py-1 text-center"
-                        placeholder="Remark"
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <div className="form-group">
@@ -543,8 +545,8 @@ const Page = () => {
             </div>
 
             <div className="mt-8">
-              <h3 className="text-lg font-bold mb-4">Terms of Service</h3>
-              <ol className="list-decimal list-inside space-y-2 mb-4">
+              <h3 className="text-base sm:text-lg font-bold mb-4">Terms of Service</h3>
+              <ol className="list-decimal list-inside space-y-2 mb-4 text-sm sm:text-base">
                 <li>
                   Samples will be disposed of after 90 days unless otherwise
                   agreed.
@@ -578,7 +580,7 @@ const Page = () => {
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="form-group">
                 <label>Hand Over by (Name):</label>
                 <input
@@ -622,11 +624,11 @@ const Page = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className={`mt-8 px-8 py-3 rounded-full ${
+              className={`w-full mt-8 px-6 sm:px-8 py-3 rounded-full ${
                 isLoading
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-black hover:bg-black/90"
-              } text-white`}
+              } text-white text-sm sm:text-base`}
             >
               {isLoading ? "Submitting..." : "Submit"}
             </button>

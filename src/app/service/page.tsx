@@ -4,11 +4,21 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function ServicesPage() {
+  const [activeService, setActiveService] = useState('Minerals Exploration & Development')
+
+  const services = [
+    'Minerals Exploration & Development',
+    'Mining Laboratory Services',
+    'Gemstone Production & Retail',
+    'Drilling & Consultancy Services'
+  ]
+
   return (
-        <div className="min-h-screen p-[10px] gap-[10px]">
-          <section className="relative w-[1410px] h-[679px] overflow-hidden rounded-[2px] border border-[1px]">
+        <div className="min-h-screen p-[10px] gap-[10px] overflow-x-hidden">
+          <section className="relative w-full md:w-[1410px] h-[679px] overflow-hidden rounded-[2px] border border-[1px]">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
               <Image
@@ -28,8 +38,8 @@ export default function ServicesPage() {
         <div className="relative z-20 pt-3">
           <Navbar />
           
-          <div className="container mx-auto px-8 pt-34">
-            <h1 className="text-white text-[20vh] font-bold">
+          <div className="container mx-auto px-4 md:px-8 pt-34">
+            <h1 className="text-white text-[10vh] md:text-[20vh] font-bold">
               Our Services
             </h1>
             <p className="text-white/90 text-xl max-w-2xl">
@@ -42,29 +52,30 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services Section */}
-      <section className="container mx-auto px-8 py-16">
-        <h2 className="text-5xl font-bold mb-8">Our Core Services</h2>
+      <section className="container mx-auto px-4 md:px-8 py-8 md:py-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-8">Our Core Services</h2>
         
         {/* Service Pills */}
-        <div className="flex flex-wrap gap-4 mb-16">
-          <div className="bg-black text-white px-6 py-3 rounded-full">
-            Minerals Exploration & Development
-          </div>
-          <div className="border border-black px-6 py-3 rounded-full">
-            Mining Laboratory Services
-          </div>
-          <div className="border border-black px-6 py-3 rounded-full">
-            Gemstone Production & Retail
-          </div>
-          <div className="border border-black px-6 py-3 rounded-full">
-            Drilling & Consultancy Services
-          </div>
+        <div className="flex flex-wrap gap-4 mb-8 md:mb-16 justify-center items-center">
+          {services.map((service) => (
+            <button
+              key={service}
+              onClick={() => setActiveService(service)}
+              className={`px-4 py-3 rounded-full transition-colors ${
+                activeService === service
+                  ? 'bg-black text-white'
+                  : 'border border-black text-black hover:bg-black/5'
+              }`}
+            >
+              {service}
+            </button>
+          ))}
         </div>
 
         {/* Minerals Exploration Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-4xl font-bold mb-6">Minerals Exploration & Development</h3>
+            <h3 className="text-2xl md:text-4xl font-bold mb-6">Minerals Exploration & Development</h3>
             <p className="text-gray-700 mb-8">
               Our expert team utilizes cutting-edge exploration techniques to identify and evaluate 
               mineral deposits across Ethiopia's diverse geological landscape. We specialize in gold, 
@@ -160,57 +171,57 @@ export default function ServicesPage() {
       </section>
 
       {/* Methodology Section */}
-      <section className="container mx-auto px-8 py-16">
-        <div className="flex justify-between items-start mb-16">
-          <h2 className="text-7xl font-bold max-w-2xl">Our Methodology</h2>
-          <p className="text-xl max-w-md">
+      <section className="container mx-auto px-4 md:px-8 py-16 md:py-32">
+        <div className="flex flex-col mb-12 md:mb-24">
+          <h2 className="text-5xl md:text-8xl font-bold mb-6">Our Methodology</h2>
+          <p className="text-xl md:text-2xl text-gray-600 w-full">
             We follow a systematic approach to deliver exceptional results for all our
             mining and mineral services, ensuring quality, safety, and efficiency at every
             stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Assessment */}
-          <div className="border rounded-3xl p-8">
-            <div className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center mb-6">
-              <span className="text-xl">1</span>
+          <div className="border rounded-3xl p-8 md:p-12">
+            <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-8">
+              <span className="text-3xl">1</span>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Assessment</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Assessment</h3>
+            <p className="text-lg md:text-xl text-gray-600">
               Thorough evaluation of project requirements, site conditions, and objectives to develop a tailored approach.
             </p>
           </div>
 
           {/* Planning */}
-          <div className="border rounded-3xl p-8">
-            <div className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center mb-6">
-              <span className="text-xl">2</span>
+          <div className="border rounded-3xl p-8 md:p-12">
+            <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-8">
+              <span className="text-3xl">2</span>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Planning</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Planning</h3>
+            <p className="text-lg md:text-xl text-gray-600">
               Detailed project planning including resource allocation, timeline development, and risk assessment.
             </p>
           </div>
 
           {/* Execution */}
-          <div className="border rounded-3xl p-8">
-            <div className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center mb-6">
-              <span className="text-xl">3</span>
+          <div className="border rounded-3xl p-8 md:p-12">
+            <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-8">
+              <span className="text-3xl">3</span>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Execution</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Execution</h3>
+            <p className="text-lg md:text-xl text-gray-600">
               Implementation of project plans with strict adherence to safety standards and quality control measures.
             </p>
           </div>
 
           {/* Analysis & Reporting */}
-          <div className="border rounded-3xl p-8">
-            <div className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center mb-6">
-              <span className="text-xl">4</span>
+          <div className="border rounded-3xl p-8 md:p-12">
+            <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mb-8">
+              <span className="text-3xl">4</span>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Analysis & Reporting</h3>
-            <p className="text-gray-600">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Analysis & Reporting</h3>
+            <p className="text-lg md:text-xl text-gray-600">
               Comprehensive data analysis and detailed reporting with actionable insights and recommendations.
             </p>
           </div>
@@ -218,10 +229,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Equipment & Technology Section */}
-      <section className="container mx-auto px-8 py-16 bg-gray-50 shadow-xl/30">
-        <h2 className="text-4xl font-bold mb-16">Equipment & Technology</h2>
+      <section className="container mx-auto px-4 md:px-8 py-8 md:py-16 bg-gray-50 shadow-xl/30">
+        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-16">Equipment & Technology</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
           {/* Exploration Technology */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -335,29 +346,29 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-       {/* Laboratory Services Section */}
+         {/* Laboratory Services Section */}
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto">
           {/* Headings */}
-          <div className="mb-12">
-            <h2 className="text-8xl font-bold mb-4">State Of The Art</h2>
-            <h3 className="text-8xl font-bold">Laboratory Services</h3>
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-5xl md:text-8xl font-bold mb-4">State Of The Art</h2>
+            <h3 className="text-5xl md:text-8xl font-bold">Laboratory Services</h3>
           </div>
 
           {/* Lab Services Card */}
           <div className="bg-black text-white rounded-[2rem] overflow-visible relative">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Content */}
-              <div className="p-12 relative z-10">
-                <h4 className="text-3xl font-bold mb-6">State-of-the-Art Laboratory Services</h4>
-                <p className="text-gray-300 mb-8">
+              <div className="p-6 md:p-12 relative z-10">
+                <h4 className="text-2xl md:text-3xl font-bold mb-6">State-of-the-Art Laboratory Services</h4>
+                <p className="text-gray-300 mb-8 text-sm md:text-base">
                   Our advanced laboratory facilities offer comprehensive testing and analysis services for the mining
                   industry. With cutting-edge equipment and experienced professionals, we deliver accurate and
                   reliable results for all your mineral testing needs.
                 </p>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-8 md:gap-y-4 mb-8 md:mb-12">
                   <div className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
                       <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -409,7 +420,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Certification Badges */}
-                <div className="flex gap-4 mb-8">
+                <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
                   <button className="flex items-center gap-2 border border-white rounded-full px-10 py-2 hover:bg-white/10 transition-colors">
                    <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.8125 9.08105L16.25 10.4873C16.6875 10.8936 16.4688 11.6123 15.9062 11.7686L13.9688 12.2686L14.5 14.2061C14.6562 14.7686 14.1562 15.2686 13.5938 15.1123L11.6562 14.5811L11.1562 16.5186C11 17.1123 10.2812 17.2998 9.875 16.8623L8.5 15.4248L7.09375 16.8623C6.6875 17.2686 5.96875 17.1123 5.8125 16.5186L5.3125 14.5811L3.375 15.1123C2.8125 15.2686 2.3125 14.7686 2.46875 14.2061L3 12.2686L1.0625 11.7686C0.5 11.6123 0.28125 10.8936 0.71875 10.4873L2.15625 9.08105L0.71875 7.6748C0.28125 7.26855 0.5 6.5498 1.0625 6.4248L3 5.9248L2.46875 3.9873C2.3125 3.4248 2.8125 2.89355 3.375 3.0498L5.3125 3.6123L5.8125 1.64355C5.9375 1.08105 6.6875 0.893555 7.09375 1.33105L8.5 2.76855L9.875 1.33105C10.2812 0.893555 11.0312 1.1123 11.1562 1.64355L11.6562 3.6123L13.5938 3.0498C14.1562 2.89355 14.6562 3.4248 14.5 3.9873L13.9688 5.9248L15.9062 6.4248C16.4688 6.5498 16.6875 7.26855 16.25 7.6748L14.8125 9.08105Z" fill="#F0F0F0"/>
@@ -434,13 +445,15 @@ export default function ServicesPage() {
                 </div>
 
                 {/* CTA Button */}
+                <Link href={"/contact"}>
                 <button className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100">
                   Request Testing Services
                 </button>
+                </Link>
               </div>
 
-              {/* Right Image */}
-              <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-10 w-[600px]">
+              {/* Mobile Image */}
+              <div className="block md:hidden w-full h-[300px]">
                 <img
                   src="/lab.svg"
                   alt="Laboratory Scientists"
@@ -448,22 +461,31 @@ export default function ServicesPage() {
                 />
               </div>
             </div>
+
+            {/* Desktop Image - Outside the grid */}
+            <div className="hidden md:block absolute top-1/2 right-0 -translate-y-1/2 translate-x-10 w-[600px] z-20">
+              <img
+                src="/lab.svg"
+                alt="Laboratory Scientists"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Featured Case Studies Section */}
-      <section className="container mx-auto px-8 py-20">
-        <h2 className="text-7xl font-bold mb-4">Featured Case Studies</h2>
-        <p className="text-xl max-w-2xl mb-12">
+      <section className="container mx-auto px-4 md:px-8 py-10 md:py-20">
+        <h2 className="text-4xl md:text-7xl font-bold mb-4">Featured Case Studies</h2>
+        <p className="text-lg md:text-xl max-w-2xl mb-8 md:mb-12">
           Explore our successful projects and see how our comprehensive
           services have delivered exceptional results for our clients across
           Ethiopia.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-12">
           {/* Oromia Gold Project */}
-          <div className="group bg-white rounded-3xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow min-w-[400px]">
+          <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow w-full md:min-w-[400px]">
             <div className="rounded-3xl overflow-hidden mb-6">
               <Image
                 src="/ft1.svg"
@@ -511,7 +533,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Welo Opal Project */}
-          <div className="group bg-white rounded-3xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow min-w-[400px]">
+          <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow w-full md:min-w-[400px]">
             <div className="rounded-3xl overflow-hidden mb-6">
               <Image
                 src="/ft2.svg"
@@ -562,7 +584,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Tigray Kaolin Project */}
-          <div className="group bg-white rounded-3xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow min-w-[400px]">
+          <div className="group bg-white rounded-3xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.15)] transition-shadow w-full md:min-w-[400px]">
             <div className="rounded-3xl overflow-hidden mb-6">
               <Image
                 src="/ft3.svg"

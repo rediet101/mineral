@@ -3,41 +3,41 @@ import { useState } from 'react';
 
 import { Button } from './ui/button'
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Corevalue() {
      const [activeIndex, setActiveIndex] = useState(0);
      const [activeService, setActiveService] = useState('Minerals Exploration & Development');
   return (
+ 
     <main className="min-h-screen text-gray-800 bg-white">
       {/* Header Section */}
-      <header className="py-16 px-6">
-        <div className="container mx-auto grid grid-cols-3 gap-8">
+      <header className="py-8 md:py-16 px-4 md:px-6">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left column - Explore heading */}
           <div>
-            <h1 className="text-5xl font-bold text-black mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4 px-4 md:px-0">
               Explore; <br />
               Ethiopia as the <br />
               land of plenty
             </h1>
-            <p className="text-sm text-gray-600">
-              with resources found in abundance throughout <br />
-              its huge and diverse land mass in our product <br />
-              range.
+            <p className="text-sm text-gray-600 w-full">
+              with resources found in abundance throughout its huge and diverse land mass in our product range.
             </p>
           </div>
 
           {/* Middle column - Logo */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center my-8 md:my-0">
             <img 
               src="/logo2.svg" 
               alt="Ethiopian Mineral Corporation" 
-              className="w-48"
+              className="w-65 md:w-65"
             />
           </div>
 
           {/* Right column - Experience text */}
-          <div className="flex flex-col justify-center">
-            <p className="text-3xl font-semibold">
+          <div className="flex flex-col justify-center md:-ml-20">
+            <p className="text-2xl md:text-3xl font-semibold  leading-[1.4]">
               Through experiences and expertise gained we know mining in Ethiopia. We consult parties interested in working in the mining sector in Ethiopia.
             </p>
           </div>
@@ -45,71 +45,83 @@ export default function Corevalue() {
       </header>
 
       {/* Core Services Section */}
-      <section className="py-12 px-6">
+      <section id="minerals-section" className="pt-19 md:py-12 px-6 relative">
         <div className="container mx-auto">
           <h2 className="text-6xl font-bold mb-12">
             Our Core Services
           </h2>
 
-          <div className="flex items-center gap-4 mb-16">
-  <Button 
-    variant="outline" 
-    className={`rounded-full px-8 py-6 text-lg ${
-      activeService === 'Minerals Exploration & Development' 
-        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
-        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
-    }`}
-    onClick={() => setActiveService('Minerals Exploration & Development')}
-  >
-    Minerals Exploration & Development
-  </Button>
-  
-  <Button 
-    variant="outline" 
-    className={`rounded-full px-8 py-6 text-lg ${
-      activeService === 'Mining Laboratory Services' 
-        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
-        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
-    }`}
-    onClick={() => setActiveService('Mining Laboratory Services')}
-  >
-    Mining Laboratory Services
-  </Button>
-  
-  <Button 
-    variant="outline" 
-    className={`rounded-full px-8 py-6 text-lg ${
-      activeService === 'Gemstone Production & Retail' 
-        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
-        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
-    }`}
-    onClick={() => setActiveService('Gemstone Production & Retail')}
-  >
-    Gemstone Production & Retail
-  </Button>
-  
-  <Button 
-    variant="outline" 
-    className={`rounded-full px-8 py-6 text-lg ml-auto ${
-      activeService === 'See All' 
-        ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
-        : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
-    }`}
-    onClick={() => setActiveService('See All')}
-  >
-    See All
-  </Button>
-</div>
+          {/* Decorative Gemstones Image */}
+          <div className="absolute right-0 top-0 -translate-y-1/2">
+            <img 
+              src="/bg1.svg" 
+              alt="" 
+              className="w-[300px] md:w-[400px] object-contain"
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-4 mb-8 md:mb-16 relative">
+            <div className="flex flex-col md:flex-row gap-4 flex-1">
+              <Button 
+                variant="outline" 
+                className={`rounded-full px-4 md:px-6 py-3 text-base whitespace-normal md:whitespace-nowrap ${
+                  activeService === 'Minerals Exploration & Development' 
+                    ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+                    : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+                }`}
+                onClick={() => setActiveService('Minerals Exploration & Development')}
+              >
+                Minerals Exploration & Development
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className={`rounded-full px-4 md:px-6 py-3 text-base whitespace-normal md:whitespace-nowrap ${
+                  activeService === 'Mining Laboratory Services' 
+                    ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+                    : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+                }`}
+                onClick={() => setActiveService('Mining Laboratory Services')}
+              >
+                Mining Laboratory Services
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                className={`rounded-full px-4 md:px-6 py-3 text-base whitespace-normal md:whitespace-nowrap ${
+                  activeService === 'Gemstone Production & Retail' 
+                    ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+                    : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+                }`}
+                onClick={() => setActiveService('Gemstone Production & Retail')}
+              >
+                Gemstone Production & Retail
+              </Button>
+            </div>
+            
+            <Button 
+              variant="outline" 
+              className={`rounded-full px-4 md:px-6 py-3 text-base whitespace-normal md:whitespace-nowrap md:ml-auto ${
+                activeService === 'See All' 
+                  ? 'bg-black text-white hover:bg-black/90 hover:text-white' 
+                  : 'border-2 border-black bg-white text-black hover:bg-black hover:text-white'
+              }`}
+              onClick={() => setActiveService('See All')}
+            >
+              See All
+            </Button>
+          </div>
 
           {/* Cards Section */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Gold Card */}
             <div className="relative overflow-hidden rounded-3xl bg-black text-white transition-all duration-300 hover:scale-105 hover:z-10 group">
               <div className="relative w-full h-[400px]">
                 <img 
                   src="/gold.svg" 
                   alt="Gold mineral"
-                  className="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                  className="absolute inset-0 w-full h-full object-cover md:grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
               <div className="absolute inset-0 p-8 flex flex-col">
@@ -139,7 +151,7 @@ export default function Corevalue() {
                 <img 
                   src="/quartz.svg" 
                   alt="Quartz mineral"
-                  className="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                  className="absolute inset-0 w-full h-full object-cover md:grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
               <div className="absolute inset-0 p-8 flex flex-col">
@@ -169,7 +181,7 @@ export default function Corevalue() {
                 <img 
                   src="/fiels.svg" 
                   alt="Feldspar mineral"
-                  className="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                  className="absolute inset-0 w-full h-full object-cover md:grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
               <div className="absolute inset-0 p-8 flex flex-col">
@@ -199,19 +211,19 @@ export default function Corevalue() {
       {/* Featured Minerals Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto">
-          <div className="flex items-start justify-between mb-12">
-            <h2 className="text-8xl font-bold">Featured Minerals</h2>
-            <p className="text-lg">
-              Discover our diverse range of<br />
-              high-quality minerals<br />
-              extracted and processed with<br />
-              sustainable practices and<br />
+          <div className="flex flex-col md:flex-row items-start justify-between mb-8 md:mb-12">
+            <h2 className="text-5xl md:text-8xl font-bold mb-4 md:mb-0">Featured Minerals</h2>
+            <p className="text-lg w-full md:max-w-md">
+              Discover our diverse range of
+              high-quality minerals
+              extracted and processed with
+              sustainable practices and
               cutting-edge technology.
             </p>
           </div>
 
           <div className="relative">
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Gold Card */}
               <div 
                 className="bg-white rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105"
@@ -315,25 +327,25 @@ export default function Corevalue() {
       <section className="py-20 px-6 bg-white">
         <div className="container mx-auto">
           {/* Headings */}
-          <div className="mb-12">
-            <h2 className="text-8xl font-bold mb-4">State Of The Art</h2>
-            <h3 className="text-8xl font-bold">Laboratory Services</h3>
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-5xl md:text-8xl font-bold mb-4">State Of The Art</h2>
+            <h3 className="text-5xl md:text-8xl font-bold">Laboratory Services</h3>
           </div>
 
           {/* Lab Services Card */}
           <div className="bg-black text-white rounded-[2rem] overflow-visible relative">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left Content */}
-              <div className="p-12 relative z-10">
-                <h4 className="text-3xl font-bold mb-6">State-of-the-Art Laboratory Services</h4>
-                <p className="text-gray-300 mb-8">
+              <div className="p-6 md:p-12 relative z-10">
+                <h4 className="text-2xl md:text-3xl font-bold mb-6">State-of-the-Art Laboratory Services</h4>
+                <p className="text-gray-300 mb-8 text-sm md:text-base">
                   Our advanced laboratory facilities offer comprehensive testing and analysis services for the mining
                   industry. With cutting-edge equipment and experienced professionals, we deliver accurate and
                   reliable results for all your mineral testing needs.
                 </p>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-8 md:gap-y-4 mb-8 md:mb-12">
                   <div className="flex items-center gap-2">
                     <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
                       <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -385,7 +397,7 @@ export default function Corevalue() {
                 </div>
 
                 {/* Certification Badges */}
-                <div className="flex gap-4 mb-8">
+                <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
                   <button className="flex items-center gap-2 border border-white rounded-full px-10 py-2 hover:bg-white/10 transition-colors">
                    <svg width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.8125 9.08105L16.25 10.4873C16.6875 10.8936 16.4688 11.6123 15.9062 11.7686L13.9688 12.2686L14.5 14.2061C14.6562 14.7686 14.1562 15.2686 13.5938 15.1123L11.6562 14.5811L11.1562 16.5186C11 17.1123 10.2812 17.2998 9.875 16.8623L8.5 15.4248L7.09375 16.8623C6.6875 17.2686 5.96875 17.1123 5.8125 16.5186L5.3125 14.5811L3.375 15.1123C2.8125 15.2686 2.3125 14.7686 2.46875 14.2061L3 12.2686L1.0625 11.7686C0.5 11.6123 0.28125 10.8936 0.71875 10.4873L2.15625 9.08105L0.71875 7.6748C0.28125 7.26855 0.5 6.5498 1.0625 6.4248L3 5.9248L2.46875 3.9873C2.3125 3.4248 2.8125 2.89355 3.375 3.0498L5.3125 3.6123L5.8125 1.64355C5.9375 1.08105 6.6875 0.893555 7.09375 1.33105L8.5 2.76855L9.875 1.33105C10.2812 0.893555 11.0312 1.1123 11.1562 1.64355L11.6562 3.6123L13.5938 3.0498C14.1562 2.89355 14.6562 3.4248 14.5 3.9873L13.9688 5.9248L15.9062 6.4248C16.4688 6.5498 16.6875 7.26855 16.25 7.6748L14.8125 9.08105Z" fill="#F0F0F0"/>
@@ -410,19 +422,30 @@ export default function Corevalue() {
                 </div>
 
                 {/* CTA Button */}
+                <Link href={"/contact"}>
                 <button className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100">
                   Request Testing Services
                 </button>
+                </Link>
               </div>
 
-              {/* Right Image */}
-              <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-10 w-[600px]">
+              {/* Mobile Image */}
+              <div className="block md:hidden w-full h-[300px]">
                 <img
                   src="/lab.svg"
                   alt="Laboratory Scientists"
                   className="w-full h-full object-contain"
                 />
               </div>
+            </div>
+
+            {/* Desktop Image - Outside the grid */}
+            <div className="hidden md:block absolute top-1/2 right-0 -translate-y-1/2 translate-x-10 w-[600px] z-20">
+              <img
+                src="/lab.svg"
+                alt="Laboratory Scientists"
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
