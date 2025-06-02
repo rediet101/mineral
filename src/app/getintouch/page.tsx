@@ -1,9 +1,8 @@
 'use client'
-
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
-const url = process.env.NEXT_PUBLIC_API_LINK + "contact-us" || "/4"
+const url = process.env.NEXT_PUBLIC_API_LINK + "contact-us"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -75,8 +74,7 @@ export default function ContactPage() {
              />
            </div>
    
-           {/* Optional Dark Overlay */}
-           <div className="absolute inset-0 bg-black/30 z-0"></div>
+
    
            {/* Content */}
            <div className="relative z-20 pt-3">
