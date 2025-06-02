@@ -79,7 +79,7 @@ export default function ContactPage() {
              <Navbar />
              
              <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-               <h1 className="text-white text-5xl md:text-[20vh] font-bold mb-4">
+               <h1 className="text-white text-6xl md:text-[20vh] font-bold mb-4">
                Contact Us
                </h1>
                <p className="text-white/90 text-base md:text-xl max-w-2xl">
@@ -101,7 +101,7 @@ export default function ContactPage() {
             />
             <div className="absolute inset-0 z-0" />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2 md:mb-6">Get In Touch</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Get In Touch</h2>
               <p className="text-gray-300 mb-8 md:mb-12 text-sm md:text-base">
                 We're here to help with all your mineral exploration and
                 processing needs. Fill out the form and our team will
