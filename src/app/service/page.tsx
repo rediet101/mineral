@@ -38,8 +38,8 @@ export default function ServicesPage() {
         <div className="relative z-20 pt-3">
           <Navbar />
           
-          <div className="container mx-auto px-4 md:px-8 pt-34">
-            <h1 className="text-white text-[10vh] md:text-[20vh] font-bold">
+          <div className="container mx-auto px-4 md:px-8 pt-30">
+            <h1 className="text-white text-[6vh] md:text-[20vh] font-bold">
               Our Services
             </h1>
             <p className="text-white/90 text-xl max-w-2xl">

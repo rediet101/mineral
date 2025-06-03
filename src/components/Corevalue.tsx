@@ -45,7 +45,7 @@ export default function Corevalue() {
       </header>
 
       {/* Core Services Section */}
-      <section id="minerals-section" className="pt-19 md:py-12 px-6 relative">
+      <section id="minerals-section" className="pt-25 md:py-12 px-6 relative">
         <div className="container mx-auto">
           <h2 className="text-6xl font-bold mb-12">
             Our Core Services
@@ -151,7 +151,7 @@ export default function Corevalue() {
                 <img 
                   src="/quartz.svg" 
                   alt="Quartz mineral"
-                  className="absolute inset-0 w-full h-full object-cover md:grayscale transition-all duration-300 group-hover:grayscale-0"
+                  className="absolute inset-0 w-full h-full object-cover grayscale-0 md:grayscale transition-all duration-300 group-hover:grayscale-0"
                 />
               </div>
               <div className="absolute inset-0 p-8 flex flex-col">
