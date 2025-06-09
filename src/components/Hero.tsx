@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/hero.svg"
+          src="/Hero.svg"
           alt="Minerals background"
           fill
           priority
