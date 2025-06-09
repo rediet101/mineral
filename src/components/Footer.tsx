@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black text-white py-8 md:py-12 rounded-2xl md:rounded-4xl">
+    <footer className="relative bg-black text-white py-8 md:py-12 rounded-2xl md:rounded-4xl" id='bottom'>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img

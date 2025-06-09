@@ -1,10 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function News() {
   return (
     <main className="min-h-screen py-8 md:py-20 px-4 md:px-6 bg-white">
       <div className="container mx-auto">
-        <h1 className="text-6xl md:text-8xl font-bold text-black mb-8 md:mb-16">
+        <h1 className="text-7xl md:text-9xl font-bold text-black mb-8 md:mb-16">
           News
         </h1>
 
@@ -25,14 +26,14 @@ export default function News() {
                 className="w-full h-[200px] md:h-[300px] object-cover"
               />
             </div>
-            <div className="flex items-center justify-end space-x-4 md:space-x-6">
+            <Link href="/news" className="flex items-center justify-end space-x-4 md:space-x-6">
               <span className="text-base md:text-xl font-bold">READ MORE</span>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#157E71] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white md:w-6 md:h-6">
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* News Card 2 */}
@@ -50,14 +51,14 @@ export default function News() {
                 className="w-full h-[200px] md:h-[300px] object-cover"
               />
             </div>
-            <div className="flex items-center justify-end space-x-4 md:space-x-6">
+            <Link href="/news" className="flex items-center justify-end space-x-4 md:space-x-6">
               <span className="text-base md:text-xl font-bold">READ MORE</span>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#157E71] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white md:w-6 md:h-6">
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* News Card 3 */}
@@ -75,14 +76,14 @@ export default function News() {
                 className="w-full h-[200px] md:h-[300px] object-cover"
               />
             </div>
-            <div className="flex items-center justify-end space-x-4 md:space-x-6">
+            <Link href="/news" className="flex items-center justify-end space-x-4 md:space-x-6">
               <span className="text-base md:text-xl font-bold">READ MORE</span>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#157E71] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white md:w-6 md:h-6">
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* News Card 4 */}
@@ -100,22 +101,24 @@ export default function News() {
                 className="w-full h-[200px] md:h-[300px] object-cover"
               />
             </div>
-            <div className="flex items-center justify-end space-x-4 md:space-x-6">
+            <Link href="/news" className="flex items-center justify-end space-x-4 md:space-x-6">
               <span className="text-base md:text-xl font-bold">READ MORE</span>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#157E71] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white md:w-6 md:h-6">
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
         {/* View All Button */}
         <div className="flex justify-center">
-          <button className="bg-black text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-base md:text-lg font-semibold">
-            View All
-          </button>
+          <Link href="/news">
+            <button className="bg-black text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-base md:text-lg font-semibold">
+              View All
+            </button>
+          </Link>
         </div>
       </div>
     </main>

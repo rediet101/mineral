@@ -8,18 +8,9 @@ const BenishangulFeldsparDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[679px] md:h-[679px] overflow-hidden rounded-[2px] border border-[1px]">
+      <section  className="relative w-full h-[90vh] bg-[url('/project.svg')] bg-contain bg-no-repeat justify-center items-center">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/project.svg"
-            alt="Benishangul Feldspar Project"
-            className="object-cover w-full h-full"
-            width={1410}
-            height={679}
-            priority
-          />
-        </div>
+       
 
         {/* Content */}
         <div className="relative z-10">
@@ -52,7 +43,7 @@ const BenishangulFeldsparDetail = () => {
       </section>
 
       {/* Project Description */}
-      <section className="py-8 md:py-16 px-4 md:px-8">
+    <section className="py-2 md:py-2 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <p className="text-gray-600 mb-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo vitae augue maximus pretium. Fusce et nisi hendrerit, ornare nisi at, hendrerit nulla. Duis id risus erat. Vivamus eu tristique tellus. Vestibulum ac dapibus massa. Morbi purus nisl, iaculis vitae elementum eget, interdum eget massa. Donec auctor enim a urna semper, non tristique est sodales. Integer blandit nulla porta pharetra hendrerit. Phasellus fermentum justo ac ex ultrices, in bibendum elit facilisis. Donec vel ultricies turpis. Aenean ultricies dui ut facilisis ullamcorper. Praesent ut est lectus. Duis consequat massa sit amet condimentum lacinia. Phasellus rhoncus ipsum vitae ornare malesuada. Sed varius faucibus sollicitudin. Donec aliquam tellus eu massa pellentesque, id porttitor eros porta.

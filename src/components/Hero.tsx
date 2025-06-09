@@ -1,129 +1,135 @@
-'use client'
+"use client";
 
-import React from 'react'
-import Navbar from './Navbar'
-import Image from 'next/image'
-import { Button } from './ui/button'
-import Link from 'next/link'
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/Navbar";
 
-const Hero = () => {
+export default function HeroSection() {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen text-white overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 -z-10">
         <Image
-          src="/Hero.svg"
-          alt="Background"
+          src="/hero.svg"
+          alt="Minerals background"
           fill
-          className="object-cover"
+          priority
+          className="object-cover object-right-bottom"
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex flex-col">
+      {/* Navigation */}
+      <div className="absolute top-0 left-0 w-full z-20">
         <Navbar />
+      </div>
 
-        <div className="flex-1 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-24 text-white">
-          <div className="md:mt-12">
-            {/* Centered heading for mobile, left-aligned for desktop */}
-            <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold mb-4 text-center md:text-left">
-              Ethiopian Mineral Corporation
-            </h1>
-            <img src="ethiopia.svg" alt="" className="mx-auto md:mx-0" />
-            <div className="flex justify-center items-center w-full px-4 md:-mt-10">
-              <p className="text-sm md:text-lg max-w-2xl text-center md:text-left mt-6 md:mt-0">
-                Ethiopian Minerals Corporation is a state-owned enterprise established in 1942,
-                tasked with the exploration, development, processing, and marketing of mineral
-                resources in Ethiopia.
-              </p>
-            </div>
+      {/* Main Content */}
+    <div className="relative z-10 pt-25 md:pt-35 px-4 md:px-10">
+  <h1 className="text-6xl md:text-7xl font-bold text-left whitespace-nowrap ml-10">
+    Ethiopian Mineral Corporation
+  </h1>
+
+
+<div className="flex flex-col items-start">
+  <img
+    src="ethiopia.svg"
+    alt="Ethiopia map"
+    className="w-auto max-w-full block ml-5 mt-5"
+  />
+
+  <p className="-mt-20 ml-10 max-w-2xl text-base md:text-lg text-left">
+    Ethiopian Minerals Corporation is a state-owned enterprise established
+    in 1942 tasked with the exploration, development, processing and
+    marketing of mineral resources in Ethiopia.
+  </p>
+</div>
+
+
+        {/* Cards Section */}
+        <div className="flex flex-wrap mt-15 mb-5">
+          {/* Card 1 */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/30 w-64 ">
+            <h3 className="text-xl font-semibold mb-2 text-white">
+              100+ Minerals
+            </h3>
+            <p className="text-sm text-white">
+              We want our visitors to be inspired to get their Minds Open.
+            </p>
           </div>
 
-          {/* Mobile Version */}
-          <div className="md:hidden flex flex-col items-center space-y-4 mt-8">
-            <Image 
-              src="/gem.svg"
-              alt="100+ Minerals"
-              width={200}
-              height={100}
-              className="object-contain"
-            />
-            
-            <Button
-              onClick={() =>
-                document
-                  .getElementById("minerals-section")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="
-                w-[80%]
-                px-8 py-4 
-                text-black 
-                font-semibold 
-                bg-white 
-                rounded-full 
-                hover:bg-white/90 
-                transition 
-                border-2 
-                border-black 
-                shadow-lg 
-                relative 
-                z-20
-                mt-8
-              "
-            >
-              Explore Ethiopia Minerals
-            </Button>
-          </div>
-
-          {/* Desktop Version */}
-          <div className="hidden md:block">
-            <div className="flex justify-between items-end">
-              <Image 
-                src="/gem.svg"
-                alt="100+ Minerals"
-                width={300}
-                height={150}
-                className="object-contain"
-              />
-              
-              <div className="flex flex-col items-end mt-15">
-                <svg width="62" height="62" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1" y="1" width="90" height="90" rx="45" stroke="white" strokeWidth="2"/>
-                  <path d="M48.0833 29.3333C48.0833 28.1827 47.1506 27.25 46 27.25C44.8494 27.25 43.9167 28.1827 43.9167 29.3333V58.6787L33.9315 48.6935C33.1179 47.8799 31.7988 47.8799 30.9852 48.6935C30.1716 49.5071 30.1716 50.8262 30.9852 51.6398L43.0537 63.7083C44.6809 65.3355 47.3191 65.3355 48.9463 63.7083L61.0148 51.6398C61.8284 50.8262 61.8284 49.5071 61.0148 48.6935C60.2012 47.8799 58.8821 47.8799 58.0685 48.6935L48.0833 58.6787V29.3333Z" fill="white"/>
-                </svg>
-                
-                <Button
-                  onClick={() =>
-                    document
-                      .getElementById("minerals-section")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="
-                    px-10 py-4 
-                    text-black 
-                    font-semibold 
-                    bg-white 
-                    rounded-full 
-                    hover:bg-white/90 
-                    transition 
-                    border-2 
-                    border-black 
-                    shadow-lg 
-                    relative 
-                    z-20
-                    mt-5
-                  "
-                >
-                  Explore Ethiopia Minerals
-                </Button>
+          {/* Card 2: Stacked Stones */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/30 w-32 flex flex-col justify-center items-center relative">
+            {[
+              { src: "/green.svg", alt: "Emerald", z: "z-10" },
+              { src: "/red.svg", alt: "Ruby", z: "z-20" },
+              { src: "/golden.svg", alt: "Gold", z: "z-10" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`group relative -mt-5 ${item.z} hover:z-30`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={60}
+                  height={60}
+                  className="transition-transform duration-300 group-hover:scale-125"
+                />
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
-  )
-}
 
-export default Hero
+      {/* Button + Arrow Group */}
+      <div className="absolute bottom-7 right-10 md:right-15 z-20 flex flex-col items-end gap-6">
+        {/* Arrow Button */}
+        <button
+          onClick={scrollToBottom}
+          className="cursor-pointer hover:scale-110 transition-transform"
+        >
+          <svg
+            width="92"
+            height="92"
+            viewBox="0 0 92 92"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="1"
+              y="1"
+              width="90"
+              height="90"
+              rx="45"
+              stroke="white"
+              strokeWidth="2"
+            />
+            <path
+              d="M48.0833 29.3333C48.0833 28.1827 47.1506 27.25 46 27.25C44.8494 27.25 43.9167 28.1827 43.9167 29.3333V58.6787L33.9315 48.6935C33.1179 47.8799 31.7988 47.8799 30.9852 48.6935C30.1716 49.5071 30.1716 50.8262 30.9852 51.6398L43.0537 63.7083C44.6809 65.3355 47.3191 65.3355 48.9463 63.7083L61.0148 51.6398C61.8284 50.8262 61.8284 49.5071 61.0148 48.6935C60.2012 47.8799 58.8821 47.8799 58.0685 48.6935L48.0833 58.6787V29.3333Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
+        {/* Explore Button */}
+        <Button
+          onClick={() =>
+            document
+              .getElementById("minerals-section")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="px-8 py-8 md:px-13 text-black font-semibold bg-white rounded-2xl hover:bg-white/90 transition border border-black shadow-lg"
+        >
+          Explore Ethiopia Minerals
+        </Button>
+      </div>
+    </div>
+  );
+}

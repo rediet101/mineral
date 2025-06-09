@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
+import Footer from '@/components/Footer'
 const url = process.env.NEXT_PUBLIC_API_LINK + "contact-us"
 
 export default function ContactPage() {
@@ -61,25 +62,15 @@ export default function ContactPage() {
 
   return (
     <div>
-    <section className="relative w-full h-[400px] md:h-[700px] overflow-hidden">
+    <section className="relative w-full h-[90vh] bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
            {/* Background Image */}
-           <div className="absolute inset-0 z-0">
-             <Image
-               src="/contact.svg"
-               alt="Background"
-               fill
-               className="object-cover w-full h-full"
-               priority
-               sizes="100vw"
-             />
-           </div>
-   
+          
            {/* Content */}
            <div className="relative z-20 pt-3">
              <Navbar />
              
              <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-               <h1 className="text-white text-6xl md:text-[20vh] font-bold mb-4">
+               <h1 className="text-white text-6xl md:text-[140px] font-bold mb-4">
                Contact Us
                </h1>
                <p className="text-white/90 text-base md:text-xl max-w-2xl">
@@ -89,7 +80,7 @@ export default function ContactPage() {
            </div>
          </section>
       
-      <div className="container mx-auto px-4 md:px-8 py-8 md:py-16">
+      <div className="container mx-auto px-4 md:px-8 py-3 md:py-3 -mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column - Contact Info */}
           <div className="text-white rounded-2xl md:rounded-3xl p-6 md:p-12 relative overflow-hidden">
@@ -312,7 +303,12 @@ export default function ContactPage() {
               </button>
             </form>
           </div>
+          
         </div>
+        
+      </div>
+      <div className='pt-10'>
+      <Footer/>
       </div>
     </div>
   )

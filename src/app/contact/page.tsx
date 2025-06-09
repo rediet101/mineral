@@ -211,25 +211,16 @@ const Page = () => {
 
   return (
     <div>
-      <section className="relative w-full h-[400px] sm:h-[700px] overflow-hidden">
+      <section className="relative w-full h-screen bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/contact.svg"
-            alt="Background"
-            fill
-            className="object-cover w-full h-full"
-            priority
-            sizes="100vw"
-          />
-        </div>
+       
 
         {/* Content */}
         <div className="relative z-20 pt-3">
           <Navbar />
 
           <div className="container mx-auto px-4 sm:px-8 pt-10 sm:pt-20">
-            <h1 className="text-white text-7xl sm:text-[30vh] font-bold">Form</h1>
+            <h1 className="text-white text-6xl md:text-[140px] font-bold">Form</h1>
             <p className="text-white/90 text-base sm:text-xl max-w-2xl">
               Reach out to our team for inquiries, support, or to discuss how we
               can meet your mineral exploration and processing needs.
@@ -240,7 +231,7 @@ const Page = () => {
 
       {/* Background Image */}
 
-      <div className="min-h-screen p-4 sm:p-6 bg-white">
+      <div className="min-h-screen bg-white -mt-32">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg"

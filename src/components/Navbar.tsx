@@ -13,8 +13,9 @@ const Navbar = () => {
     { href: '/', label: 'Home' },
     { href: '/service', label: 'Services' },
     { href: '/project', label: 'Project' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/about', label: 'About Us' }
+    { href: '/contact/getintouch', label: 'Contact' },
+    { href: '/about', label: 'About Us' },
+    { href: '/news', label: 'News' },
   ]
 
   return (
@@ -41,7 +42,11 @@ const Navbar = () => {
                   px-10 py-3 
                   transition duration-300 
                   hover:bg-white hover:text-black
-                  ${pathname === href ? 'bg-white !text-black' : 'text-white'}
+                  ${pathname === href || 
+                    (href === '/service' && pathname?.startsWith('/service/')) || 
+                    (href === '/contact/getintouch' && pathname?.startsWith('/contact')) ||
+                    (href === '/news' && pathname?.startsWith('/news/')) ? 'bg-white !text-black' : 'text-white'}
+                    
                 `}
               >
                 {label}
@@ -80,7 +85,10 @@ const Navbar = () => {
                     transition duration-300 
                     hover:bg-white hover:text-black
                     text-center
-                    ${pathname === href ? 'bg-white !text-black' : 'text-white'}
+                    ${pathname === href || 
+                      (href === '/service' && pathname?.startsWith('/service/')) || 
+                      (href === '/contact/getintouch' && pathname?.startsWith('/contact')) ||
+                      (href === '/news' && pathname?.startsWith('/news/')) ? 'bg-white !text-black' : 'text-white'}
                   `}
                 >
                   {label}

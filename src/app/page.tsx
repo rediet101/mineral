@@ -5,15 +5,14 @@ import Newss from "@/components/Newss";
 
 import Whoarewe from "@/components/Whoarewe";
 
-
 export default function Home() {
   return (
-   <>
-   <Hero />
-   <Corevalue/>
-   <Whoarewe/>
-    <Newss/>
-    <Footer/>
-   </>
+    <>
+      <Hero />
+      <Corevalue />
+      <Whoarewe />
+      <Newss />
+      <Footer />
+    </>
   );
 }
