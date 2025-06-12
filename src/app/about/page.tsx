@@ -68,7 +68,7 @@ const page = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {/* Mission Card */}
               <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-black">
-                <div className="bg-[#1B1F24] p-6 flex flex-col items-center justify-center">
+                <div className="bg-[#111827] p-6 flex flex-col items-center justify-center">
                   <div className="flex items-center justify-center mb-2">
                   <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="76" height="76" rx="38" fill="white"/>
@@ -104,7 +104,7 @@ const page = () => {
 
               {/* Vision Card */}
               <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-black">
-                <div className="bg-[#1B1F24] p-6 flex flex-col items-center justify-center">
+                <div className="bg-[#111827] p-6 flex flex-col items-center justify-center">
                   <div className="flex items-center justify-center mb-2">
                   <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="76" height="76" rx="38" fill="white"/>
@@ -478,12 +478,12 @@ const page = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-auto">
             <Link href="/getintouch" target="_blank" rel="noopener noreferrer">
-              <button className="w-full sm:w-auto bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition-colors text-sm md:text-base">
+              <button className="w-full sm:w-auto bg-[#111827] text-white px-6 py-3 rounded hover:bg-gray-800 transition-colors text-sm md:text-base">
                 Contact Us
               </button>
             </Link>
             <Link href="https://reddy.ai/services" target="_blank" rel="noopener noreferrer">
-              <button className="w-full sm:w-auto bg-[#1B1F24] text-white px-6 py-3 rounded hover:bg-gray-800 transition-colors text-sm md:text-base">
+              <button className="w-full sm:w-auto bg-[#111827] text-white px-6 py-3 rounded hover:bg-gray-800 transition-colors text-sm md:text-base">
                 Request Service
               </button>
             </Link>
@@ -491,7 +491,7 @@ const page = () => {
         </div>
 
         {/* Our Locations */}
-        <div className="w-full md:w-1/2 bg-[#1B1F24] text-white p-10 min-h-[400px]">
+        <div className="w-full md:w-1/2 bg-[#111827] text-white p-10 min-h-[400px]">
           <h2 className="text-xl md:text-2xl font-semibold mb-8">Our Locations</h2>
 
           <div className="space-y-8">

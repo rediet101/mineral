@@ -31,41 +31,43 @@ export default function HeroSection() {
       </div>
 
       {/* Main Content */}
-    <div className="relative z-10 pt-25 md:pt-35 px-4 md:px-10">
-  <h1 className="text-6xl md:text-7xl font-bold text-left whitespace-nowrap ml-10">
-    Ethiopian Mineral Corporation
-  </h1>
+      <div className="relative z-10 pt-25 md:pt-35 px-4 md:px-10">
+        {/* Heading - centered on mobile, left-aligned on desktop */}
+        <h1 className="text-3xl md:text-7xl font-bold text-center md:text-left whitespace-nowrap md:ml-10">
+          Ethiopian Mineral Corporation
+        </h1>
 
+        {/* Content container */}
+        <div className="flex flex-col items-center md:items-start md:flex-col">
+          {/* Ethiopia image */}
+          <img
+            src="ethiopia.svg"
+            alt="Ethiopia map"
+            className="w-auto max-w-[80%] md:max-w-full block mt-5 md:ml-5"
+          />
 
-<div className="flex flex-col items-start">
-  <img
-    src="ethiopia.svg"
-    alt="Ethiopia map"
-    className="w-auto max-w-full block ml-5 mt-5"
-  />
+          {/* Paragraph */}
+          <p className="mt-5 md:-mt-20 md:ml-10 max-w-md md:max-w-2xl text-sm md:text-lg text-center md:text-left px-2 md:px-0">
+            Ethiopian Minerals Corporation is a state-owned enterprise established
+            in 1942 tasked with the exploration, development, processing and
+            marketing of mineral resources in Ethiopia.
+          </p>
+        </div>
 
-  <p className="-mt-20 ml-10 max-w-2xl text-base md:text-lg text-left">
-    Ethiopian Minerals Corporation is a state-owned enterprise established
-    in 1942 tasked with the exploration, development, processing and
-    marketing of mineral resources in Ethiopia.
-  </p>
-</div>
-
-
-        {/* Cards Section */}
-        <div className="flex flex-wrap mt-15 mb-5">
+        {/* Cards Section - adjusted for mobile */}
+        <div className="flex flex-wrap mt-10 md:mt-15 mb-5 justify-center md:justify-start md:ml-0">
           {/* Card 1 */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/30 w-64 ">
-            <h3 className="text-xl font-semibold mb-2 text-white">
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/30 w-56 md:w-64 mx-2 md:mx-0">
+            <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">
               100+ Minerals
             </h3>
-            <p className="text-sm text-white">
+            <p className="text-xs md:text-sm text-white">
               We want our visitors to be inspired to get their Minds Open.
             </p>
           </div>
 
           {/* Card 2: Stacked Stones */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/30 w-32 flex flex-col justify-center items-center relative">
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-2xl border border-white/30 w-24 md:w-32 flex flex-col justify-center items-center relative mt-4 md:mt-0">
             {[
               { src: "/green.svg", alt: "Emerald", z: "z-10" },
               { src: "/red.svg", alt: "Ruby", z: "z-20" },
@@ -73,14 +75,14 @@ export default function HeroSection() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`group relative -mt-5 ${item.z} hover:z-30`}
+                className={`group relative -mt-3 md:-mt-5 ${item.z} hover:z-30`}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  width={60}
-                  height={60}
-                  className="transition-transform duration-300 group-hover:scale-125"
+                  width={45}
+                  height={45}
+                  className="w-10 h-10 md:w-[60px] md:h-[60px] transition-transform duration-300 group-hover:scale-125"
                 />
               </div>
             ))}
@@ -88,19 +90,20 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Button + Arrow Group */}
-      <div className="absolute bottom-7 right-10 md:right-15 z-20 flex flex-col items-end gap-6">
+      {/* Button + Arrow Group - RIGHT SIDE ON BOTH MOBILE AND DESKTOP */}
+      <div className="absolute bottom-7 right-5 md:right-10 z-20 flex flex-col items-end gap-4 md:gap-6">
         {/* Arrow Button */}
         <button
           onClick={scrollToBottom}
           className="cursor-pointer hover:scale-110 transition-transform"
         >
           <svg
-            width="92"
-            height="92"
+            width="72"
+            height="72"
             viewBox="0 0 92 92"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="w-14 h-14 md:w-[92px] md:h-[92px]"
           >
             <rect
               x="1"
@@ -125,7 +128,7 @@ export default function HeroSection() {
               .getElementById("minerals-section")
               ?.scrollIntoView({ behavior: "smooth" })
           }
-          className="px-8 py-8 md:px-13 text-black font-semibold bg-white rounded-2xl hover:bg-white/90 transition border border-black shadow-lg"
+          className="px-6 py-6 md:px-8 md:py-8 text-sm md:text-base text-black font-semibold bg-white rounded-2xl hover:bg-white/90 transition border border-black shadow-lg"
         >
           Explore Ethiopia Minerals
         </Button>

@@ -8,7 +8,7 @@ const NewsDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] bg-[url('/News1.svg')] bg-contain bg-no-repeat justify-center items-center">
+      <section className="relative w-full h-[90vh] bg-[url('/news1.svg')] bg-contain bg-no-repeat justify-center items-center">
         {/* Background Image */}
         
 

@@ -147,7 +147,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services Section */}
-      <section className="mx-auto px-4 md:px-8 py-5 md:py-5">
+      <section className="mx-auto px-4 md:px-8 py-5 md:py-">
         <h2 className="text-5xl md:text-7xl font-bold mb-8">Our Core Services</h2>
         
         <div className="flex flex-col gap-4 mb-8 md:mb-16">

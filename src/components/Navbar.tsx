@@ -71,7 +71,7 @@ const Navbar = () => {
 
         {/* Mobile menu - now only covering top portion */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-black/90 z-50 shadow-lg">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-[#111827] z-50 shadow-lg">
             <div className="flex flex-col space-y-2 p-4">
               {navLinks.map(({ href, label }) => (
                 <Link
