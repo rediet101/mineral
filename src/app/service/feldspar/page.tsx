@@ -8,44 +8,44 @@ const FeldsparDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section  className="relative w-full h-screen bg-[url('/fields.svg')] bg-contain bg-no-repeat justify-center items-center">
-        {/* Background Image */}
-       
-
-        {/* Content */}
-        <div className="relative z-10">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-            <h1 className="text-6xl md:text-[140px] font-bold text-white leading-none mb-4 md:mb-8">
-              Quartz Project
-            </h1>
-            <h2 className="text-xl md:text-2xl text-white mb-6 md:mb-8">
-             Case Study
-            </h2>
-            
-            <div className="flex flex-col md:flex-row gap-6 md:gap-20 text-white">
-              <div className="mb-4 md:mb-0">
-                <p className="text-sm mb-1">Investment:</p>
-                <p className="text-lg md:text-xl font-semibold">$22 Million</p>
-              </div>
-              <div className="mb-4 md:mb-0">
-                <p className="text-sm mb-1">Area:</p>
-                <p className="text-lg md:text-xl font-semibold">680 hectares</p>
-              </div>
-              <div>
-                <p className="text-sm mb-1">Timeline:</p>
-                <p className="text-lg md:text-xl font-semibold">2024 - 2029</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="relative w-full h-[90vh] bg-[url('/fiels.svg')] bg-no-repeat bg-center bg-cover justify-center items-center">
+             {/* 100% UNCHANGED CONTENT - NO CROPPING */}
+             <div className="relative z-10">
+               <Navbar />
+           
+                <div className="container mx-auto px-4 md:px-8 pt-5 md:pt-20">
+                       <div className=" bg-opacity-50 p-6 rounded-lg max-w-3xl">
+                         <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight mb-4">
+                           quartz project
+                         </h1>
+                         <h2 className="text-xl md:text-3xl text-white mb-6">
+                           Case Study
+                         </h2>
+                         <div className="flex flex-col md:flex-row gap-6 md:gap-20 text-white">
+                         <div className="mb-4 md:mb-0">
+                           <p className="text-lg mb-1">Investment:</p>
+                           <p className="text-lg md:text-xl font-semibold">$22 Million</p>
+                         </div>
+                         <div className="mb-4 md:mb-0">
+                           <p className="text-sm mb-1">Area:</p>
+                           <p className="text-lg md:text-xl font-semibold">680 hectares</p>
+                         </div>
+                         <div>
+                           <p className="text-sm mb-1">Timeline:</p>
+                           <p className="text-lg md:text-xl font-semibold">2024 - 2029</p>
+                         </div>
+                       </div>
+                       </div>
+                 </div>
+               </div>
+           
+           </section>
+      
 
       {/* Project Description */}
       <section className="py-8 md:py-16 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <p className="text-gray-600 mb-12">
+          <p className="text-gray-600 -mt-5 md:-mt-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo vitae augue maximus pretium. Fusce et nisi hendrerit, ornare nisi at, hendrerit nulla. Duis id risus erat. Vivamus eu tristique tellus. Vestibulum ac dapibus massa. Morbi purus nisl, iaculis vitae elementum eget, interdum eget massa. Donec auctor enim a urna semper, non tristique est sodales. Integer blandit nulla porta pharetra hendrerit. Phasellus fermentum justo ac ex ultrices, in bibendum elit facilisis. Donec vel ultricies turpis. Aenean ultricies dui ut facilisis ullamcorper. Praesent ut est lectus. Duis consequat massa sit amet condimentum lacinia. Phasellus rhoncus ipsum vitae ornare malesuada. Sed varius faucibus sollicitudin. Donec aliquam tellus eu massa pellentesque, id porttitor eros porta.
           </p>
           <p className="text-gray-600 mb-12">

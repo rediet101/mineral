@@ -62,25 +62,46 @@ export default function ContactPage() {
 
   return (
     <div>
-    <section className="relative w-full h-[90vh] bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
-           {/* Background Image */}
-          
-           {/* Content */}
-           <div className="relative z-20 pt-3">
-             <Navbar />
-             
-             <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-               <h1 className="text-white text-6xl md:text-[140px] font-bold mb-4">
-               Contact Us
-               </h1>
-               <p className="text-white/90 text-base md:text-xl max-w-2xl">
-                Reach out to our team for inquiries, support, or to discuss how we can meet your mineral exploration and processing needs.
-               </p>
-             </div>
-           </div>
-         </section>
+     <section className="relative w-full h-[100vh] bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
+  {/* Background Image - remains unchanged */}
+  
+  {/* Content - responsive adjustments */}
+  <div className="relative z-20 pt-3">
+    <Navbar />
+    
+    <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-30">
+      {/* Responsive heading */}
+      <h1 className="text-white text-6xl md:text-[140px] font-bold leading-tight md:leading-none">
+        Contact Us
+      </h1>
       
-      <div className="container mx-auto px-4 md:px-8 py-3 md:py-3 -mt-12">
+      {/* Responsive paragraph - hidden on mobile if it doesn't fit well */}
+      <p className="hidden md:block text-white/90 text-xl max-w-2xl">
+       Reach out to our team for inquiries, support, or to discuss how we can meet your mineral exploration and processing needs.
+      </p>
+      
+      {/* Mobile-only alternative content */}
+      <div className="md:hidden mt-6">
+        <p className="text-white/90 text-base max-w-[90%]">
+          Expert mineral services with cutting-edge technology and decades of experience.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  {/* Optional mobile adjustments for background */}
+  <style jsx>{`
+    @media (max-width: 767px) {
+      section {
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+      }
+    }
+  `}</style>
+</section>
+      
+      <div className="container mx-auto px-4 md:px-8 py-10 md:py-3 -mt-5 md:-mt-30 ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column - Contact Info */}
           <div className="text-white rounded-2xl md:rounded-3xl p-6 md:p-12 relative overflow-hidden">
@@ -90,7 +111,7 @@ export default function ContactPage() {
                 backgroundImage: "url('/contactbg.svg')",
               }}
             />
-            <div className="absolute inset-0 z-0" />
+            <div className="absolute inset-0 z-0 " />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Get In Touch</h2>
               <p className="text-gray-300 mb-8 md:mb-12 text-sm md:text-base">

@@ -8,39 +8,38 @@ const QuartzDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section  className="relative w-full h-screen bg-[url('/quartiz.gif')] bg-contain bg-no-repeat justify-center items-center">
-        {/* Background Image */}
-       
-
-        {/* Content */}
-        <div className="relative z-10">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-            <h1 className="text-6xl md:text-[140px] font-bold text-white leading-none mb-4 md:mb-8">
-              Quartz Project
-            </h1>
-            <h2 className="text-xl md:text-2xl text-white mb-6 md:mb-8">
-             Case Study
-            </h2>
-            
-            <div className="flex flex-col md:flex-row gap-6 md:gap-20 text-white">
-              <div className="mb-4 md:mb-0">
-                <p className="text-sm mb-1">Investment:</p>
-                <p className="text-lg md:text-xl font-semibold">$22 Million</p>
-              </div>
-              <div className="mb-4 md:mb-0">
-                <p className="text-sm mb-1">Area:</p>
-                <p className="text-lg md:text-xl font-semibold">680 hectares</p>
-              </div>
-              <div>
-                <p className="text-sm mb-1">Timeline:</p>
-                <p className="text-lg md:text-xl font-semibold">2024 - 2029</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     <section className="relative w-full h-[90vh] bg-[url('/quartz.svg')] bg-no-repeat bg-center bg-cover justify-center items-center">
+       {/* 100% UNCHANGED CONTENT - NO CROPPING */}
+       <div className="relative z-10">
+         <Navbar />
+     
+          <div className="container mx-auto px-4 md:px-8 pt-5 md:pt-20">
+                 <div className=" bg-opacity-50 p-6 rounded-lg max-w-3xl">
+                   <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight mb-4">
+                     quartz project
+                   </h1>
+                   <h2 className="text-xl md:text-3xl text-white mb-6">
+                     Case Study
+                   </h2>
+                   <div className="flex flex-col md:flex-row gap-6 md:gap-20 text-white">
+                   <div className="mb-4 md:mb-0">
+                     <p className="text-lg mb-1">Investment:</p>
+                     <p className="text-lg md:text-xl font-semibold">$22 Million</p>
+                   </div>
+                   <div className="mb-4 md:mb-0">
+                     <p className="text-sm mb-1">Area:</p>
+                     <p className="text-lg md:text-xl font-semibold">680 hectares</p>
+                   </div>
+                   <div>
+                     <p className="text-sm mb-1">Timeline:</p>
+                     <p className="text-lg md:text-xl font-semibold">2024 - 2029</p>
+                   </div>
+                 </div>
+                 </div>
+           </div>
+         </div>
+     
+     </section>
 
       {/* Project Description */}
       <section className="py-8 md:py-16 px-4 md:px-8">

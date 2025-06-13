@@ -123,31 +123,49 @@ export default function ServicesPage() {
 
   return (
         <div className="min-h-screen overflow-x-hidden">
-          <section className="relative w-full h-[90vh] bg-[url('/service.svg')] bg-contain bg-no-repeat justify-center items-center">
-            {/* Background Image */}
-          
-        {/* Optional Dark Overlay */}
-
-
-        {/* Content */}
-        <div className="relative z-20 pt-3">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-30">
-            <h1 className="text-white text-6xl md:text-[140px] font-bold">
-              Our Services
-            </h1>
-            <p className="text-white/90 text-xl max-w-2xl">
-              Delivering excellence in mineral exploration, laboratory analysis, drilling
-              operations, and gemstone production with cutting-edge technology and
-              decades of expertise.
-            </p>
-          </div>
-        </div>
-      </section>
+          <section className="relative w-full h-[100vh] bg-[url('/service.svg')] bg-contain bg-no-repeat justify-center items-center">
+  {/* Background Image - remains unchanged */}
+  
+  {/* Content - responsive adjustments */}
+  <div className="relative z-20 pt-3">
+    <Navbar />
+    
+    <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-30">
+      {/* Responsive heading */}
+      <h1 className="text-white text-6xl md:text-[140px] font-bold leading-tight md:leading-none">
+        Our Services
+      </h1>
+      
+      {/* Responsive paragraph - hidden on mobile if it doesn't fit well */}
+      <p className="hidden md:block text-white/90 text-xl max-w-2xl">
+        Delivering excellence in mineral exploration, laboratory analysis, drilling
+        operations, and gemstone production with cutting-edge technology and
+        decades of expertise.
+      </p>
+      
+      {/* Mobile-only alternative content */}
+      <div className="md:hidden mt-6">
+        <p className="text-white/90 text-base max-w-[90%]">
+          Expert mineral services with cutting-edge technology and decades of experience.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  {/* Optional mobile adjustments for background */}
+  <style jsx>{`
+    @media (max-width: 767px) {
+      section {
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+      }
+    }
+  `}</style>
+</section>
 
       {/* Core Services Section */}
-      <section className="mx-auto px-4 md:px-8 py-5 md:py-">
+      <section className="mx-auto px-4 md:px-8 py-5 md:py-1 -mt-3 md:-mt-15">
         <h2 className="text-5xl md:text-7xl font-bold mb-8">Our Core Services</h2>
         
         <div className="flex flex-col gap-4 mb-8 md:mb-16">

@@ -8,15 +8,12 @@ const NewsDetail = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] bg-[url('/news1.svg')] bg-contain bg-no-repeat justify-center items-center">
-        {/* Background Image */}
-        
+     <section className="relative w-full h-[90vh] bg-[url('/news1.svg')] bg-no-repeat bg-center bg-cover justify-center items-center">
+  {/* 100% UNCHANGED CONTENT - NO CROPPING */}
+  <div className="relative z-10">
+    <Navbar />
 
-        {/* Content */}
-        <div className="relative z-10">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
+     <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
             <div className=" bg-opacity-50 p-6 rounded-lg max-w-3xl">
               <p className="text-white text-sm mb-2">MINING & RESOURCES | December 15, 2023</p>
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
@@ -26,14 +23,12 @@ const NewsDetail = () => {
                 Groundbreaking project promises economic boost and job creation in mineral-rich region
               </h2>
             </div>
-            
-            
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
 
+</section>
       {/* News Content */}
-      <section className="py-3 md:py-3 px-4 md:px-8 -mt-15">
+      <section className="py-3 md:py-3 px-4 md:px-8 -mt-1">
         <div className="max-w-3xl mx-auto">
           <div className="mb-1">
             <p className="text-gray-600 italic text-lg mb-6">

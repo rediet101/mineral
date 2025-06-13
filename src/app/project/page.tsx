@@ -146,40 +146,41 @@ const ProjectPage = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative w-full h-[90vh] bg-[url('/project.svg')] bg-contain bg-no-repeat justify-center items-center">
-        <div className="relative z-10">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-            <h1 className="text-[80px] md:text-[150px] font-bold text-white leading-none mb-4 md:mb-6">
-              Projects
-            </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-2xl mb-8 md:mb-16">
-              Discover our portfolio of sustainable mining and exploration projects across
-              Ethiopia's mineral-rich regions.
-            </p>
+       <section className="relative w-full h-[90vh] bg-[url('/project.svg')] bg-no-repeat bg-center bg-cover justify-center items-center">
+  {/* 100% UNCHANGED CONTENT - NO CROPPING */}
+  <div className="relative z-10">
+    <Navbar />
+    
+    <div className="container mx-auto px-4 md:px-8 pt-4 md:pt-20">
+      <h1 className="text-[80px] md:text-[150px] font-bold text-white leading-none mb-4 md:mb-6">
+        Projects
+      </h1>
+      
+      <p className="text-white/90 text-lg md:text-xl max-w-2xl mb-8 md:mb-16">
+        Discover our portfolio of sustainable mining and exploration projects across
+        Ethiopia's mineral-rich regions.
+      </p>
 
-            {/* Statistics */}
-            <div className="flex flex-col md:flex-row gap-8 md:gap-20">
-              <div className="text-white">
-                <div className="text-3xl md:text-5xl font-bold mb-2">{activeProjectsCount}+</div>
-                <div className="text-base md:text-lg">Active Projects</div>
-              </div>
-              <div className="text-white">
-                <div className="text-3xl md:text-5xl font-bold mb-2">{regionsCoveredCount}+</div>
-                <div className="text-base md:text-lg">Regions Covered</div>
-              </div>
-              <div className="text-white">
-                <div className="text-3xl md:text-5xl font-bold mb-2">{formatCurrency(totalInvestment)}+</div>
-                <div className="text-base md:text-lg">Total Investment</div>
-              </div>
-            </div>
-          </div>
+      <div className="flex flex-col md:flex-row gap-3 md:gap-20">
+        <div className="text-white">
+          <div className="text-3xl md:text-5xl font-bold mb-2">{activeProjectsCount}+</div>
+          <div className="text-base md:text-lg">Active Projects</div>
         </div>
-      </section>
+        <div className="text-white">
+          <div className="text-3xl md:text-5xl font-bold mb-2">{regionsCoveredCount}+</div>
+          <div className="text-base md:text-lg">Regions Covered</div>
+        </div>
+        <div className="text-white">
+          <div className="text-3xl md:text-5xl font-bold mb-1">{formatCurrency(totalInvestment)}+</div>
+          <div className="text-base md:text-lg">Total Investment</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+</section>
       {/* Project Gallery Section */}
-     <section className="pt-0 px-4 md:px-8 bg-white">
+     <section className="pt-5 px-4 md:px-8 bg-white -mt-3 md:mt-5">
         <h2 className="text-5xl md:text-7xl font-bold mb-6 md:mb-8">Project Gallery</h2>
         
         {/* Filters */}

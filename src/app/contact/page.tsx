@@ -211,27 +211,49 @@ const Page = () => {
 
   return (
     <div>
-      <section className="relative w-full h-screen bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
-        {/* Background Image */}
+     <section className="relative w-full h-[100vh] bg-[url('/contact.svg')] bg-contain bg-no-repeat justify-center items-center">
+       {/* Background Image - remains unchanged */}
        
-
-        {/* Content */}
-        <div className="relative z-20 pt-3">
-          <Navbar />
-
-          <div className="container mx-auto px-4 sm:px-8 pt-10 sm:pt-20">
-            <h1 className="text-white text-6xl md:text-[140px] font-bold">Form</h1>
-            <p className="text-white/90 text-base sm:text-xl max-w-2xl">
-              Reach out to our team for inquiries, support, or to discuss how we
+       {/* Content - responsive adjustments */}
+       <div className="relative z-20 pt-3">
+         <Navbar />
+         
+         <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-30">
+           {/* Responsive heading */}
+           <h1 className="text-white text-8xl md:text-[140px] font-bold leading-tight md:leading-none">
+             Form
+           </h1>
+           
+           {/* Responsive paragraph - hidden on mobile if it doesn't fit well */}
+           <p className="hidden md:block text-white/90 text-xl max-w-2xl">
+             Reach out to our team for inquiries, support, or to discuss how we
               can meet your mineral exploration and processing needs.
-            </p>
-          </div>
-        </div>
-      </section>
+           </p>
+           
+           {/* Mobile-only alternative content */}
+           <div className="md:hidden mt-6">
+             <p className="text-white/90 text-base max-w-[90%]">
+               Expert mineral services with cutting-edge technology and decades of experience.
+             </p>
+           </div>
+         </div>
+       </div>
+       
+       {/* Optional mobile adjustments for background */}
+       <style jsx>{`
+         @media (max-width: 767px) {
+           section {
+             background-size: cover;
+             background-position: center;
+             height: 80vh;
+           }
+         }
+       `}</style>
+     </section>
 
       {/* Background Image */}
 
-      <div className="min-h-screen bg-white -mt-32">
+      <div className="min-h-screen bg-white -mt-2 md:-mt-30">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-4xl mx-auto bg-white p-4 sm:p-8 rounded-lg"

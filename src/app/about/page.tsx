@@ -409,26 +409,46 @@ const page = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative w-full h-[90vh] bg-[url('/about.svg')] bg-contain bg-no-repeat justify-center items-center">
-        {/* Background Image */}
-        
-
-        {/* Content */}
-        <div className="relative z-20">
-          <Navbar />
-          
-          <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20">
-            <h1 className="text-6xl md:text-[140px] font-bold text-white leading-none mb-4">
-              About Us
-            </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-2xl">
-              Leading the way in sustainable mineral exploration and development since 1995 G.C
-            </p>
-          </div>
-        </div>
-      </section>
+        <section className="relative w-full h-[100vh] bg-[url('/about.svg')] bg-contain bg-no-repeat justify-center items-center">
+  {/* Background Image - remains unchanged */}
+  
+  {/* Content - responsive adjustments */}
+  <div className="relative z-20 pt-3">
+    <Navbar />
+    
+    <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-30">
+      {/* Responsive heading */}
+      <h1 className="text-white text-6xl md:text-[140px] font-bold leading-tight md:leading-none">
+        About Us 
+      </h1>
       
-      <section className="bg-white py-5 md:py-5 px-4 md:px-6">
+      {/* Responsive paragraph - hidden on mobile if it doesn't fit well */}
+      <p className="hidden md:block text-white/90 text-xl max-w-2xl">
+         Leading the way in sustainable mineral exploration and development since 1995 G.C
+      </p>
+      
+      {/* Mobile-only alternative content */}
+      <div className="md:hidden mt-6">
+        <p className="text-white/90 text-base max-w-[90%]">
+          Expert mineral services with cutting-edge technology and decades of experience.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  {/* Optional mobile adjustments for background */}
+  <style jsx>{`
+    @media (max-width: 767px) {
+      section {
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+      }
+    }
+  `}</style>
+</section>
+      
+      <section className="bg-white py-5 md:py-5 px-4 md:px-6 -mt-1 md:-mt-17">
         {/* Navigation Tabs */}
         <div className="max-w-6xl mx-auto mb-8 md:mb-16 overflow-x-auto">
           <div className="flex gap-4 md:gap-8 border-b border-gray-200 min-w-max">
